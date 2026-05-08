@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Приют «Тёплые лапы» — место, где каждое животное найдёт любовь и заботу. Помогаем бездомным кошкам, собакам и другим животным обрести новый дом.">
+  <meta name="keywords" content="приют животных, бездомные животные, кошки, собаки, усыновить животное, помочь приюту">
+  <meta name="author" content="Тёплые лапы">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Приют «Тёплые лапы»">
+  <meta property="og:description" content="Помогаем бездомным животным найти дом">
+  <meta property="og:type" content="website">
+  <title>Тёплые лапы — Главная</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Google Analytics (GA4) — замените G-XXXXXXXXXX на свой ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <style>
+    /* ===================== CSS VARIABLES ===================== */
+    :root {
+      --cream:    #FAF6F0;
+      --warm:     #F5EDE0;
+      --sand:     #E8D8C0;
+      --terra:    #C8714A;
+      --terra-d:  #A85835;
+      --green:    #4A7C59;
+      --green-l:  #6A9E78;
+      --bark:     #3D2B1F;
+      --bark-l:   #6B4C38;
+      --text:     #2E1F15;
+      --muted:    #8A7060;
+      --white:    #FFFFFF;
+      --shadow:   0 4px 24px rgba(61,43,31,.12);
+      --shadow-l: 0 2px 10px rgba(61,43,31,.08);
+      --radius:   16px;
+      --radius-s: 8px;
+      --trans:    .3s cubic-bezier(.4,0,.2,1);
+    }
+
+    /* ===================== RESET ===================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(--text); line-height: 1.7; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    /* ===================== HEADER / NAV ===================== */
+    .site-header {
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(250,246,240,.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--sand);
+      padding: 0 24px;
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 70px; gap: 20px;
+    }
+    .logo {
+      display: flex; align-items: center; gap: 10px;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; font-weight: 900;
+      color: var(--terra);
+    }
+    .logo-paw { font-size: 1.6rem; }
+    .nav-links { display: flex; gap: 4px; }
+    .nav-links a {
+      padding: 8px 16px; border-radius: var(--radius-s);
+      font-weight: 600; font-size: .95rem;
+      color: var(--bark-l);
+      transition: background var(--trans), color var(--trans);
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: var(--terra); color: var(--white);
+    }
+    .nav-socials { display: flex; gap: 8px; align-items: center; }
+    .nav-socials a {
+      width: 36px; height: 36px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--warm); font-size: .85rem; font-weight: 700;
+      color: var(--bark-l);
+      transition: background var(--trans), color var(--trans), transform var(--trans);
+    }
+    .nav-socials a:hover { background: var(--terra); color: var(--white); transform: scale(1.1); }
+    .burger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+    }
+    .burger span { display: block; width: 24px; height: 2px; background: var(--bark); border-radius: 2px; transition: var(--trans); }
+    .mobile-menu {
+      display: none; flex-direction: column; gap: 4px;
+      padding: 16px 24px; background: var(--warm);
+      border-bottom: 1px solid var(--sand);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      padding: 10px 14px; border-radius: var(--radius-s);
+      font-weight: 600; color: var(--bark-l);
+      transition: background var(--trans);
+    }
+    .mobile-menu a:hover { background: var(--sand); }
+
+    /* ===================== BANNER ===================== */
+    .banner {
+      position: relative; overflow: hidden;
+      height: 580px;
+    }
+    .banner-slides { display: flex; height: 100%; transition: transform .8s cubic-bezier(.77,0,.175,1); }
+    .banner-slide {
+      min-width: 100%; height: 100%; position: relative;
+      display: flex; align-items: center;
+    }
+    .banner-slide img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; object-position: center;
+    }
+    .banner-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, rgba(61,43,31,.75) 0%, rgba(61,43,31,.1) 70%);
+    }
+    .banner-content {
+      position: relative; z-index: 1; padding: 0 60px;
+      max-width: 560px;
+    }
+    .banner-tag {
+      display: inline-block; background: var(--terra); color: var(--white);
+      font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 20px; margin-bottom: 16px;
+    }
+    .banner-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem); font-weight: 900;
+      color: var(--white); line-height: 1.15; margin-bottom: 16px;
+    }
+    .banner-content p { color: rgba(255,255,255,.85); font-size: 1.05rem; margin-bottom: 28px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 28px; border-radius: 50px;
+      font-family: 'Nunito', sans-serif; font-size: .95rem; font-weight: 700;
+      cursor: pointer; border: 2px solid transparent;
+      transition: background var(--trans), color var(--trans), transform var(--trans), box-shadow var(--trans);
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(200,113,74,.4); }
+    .btn-primary { background: var(--terra); color: var(--white); }
+    .btn-primary:hover { background: var(--terra-d); }
+    .btn-outline { background: transparent; border-color: var(--white); color: var(--white); }
+    .btn-outline:hover { background: var(--white); color: var(--terra); }
+    .banner-dots {
+      position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%);
+      display: flex; gap: 8px; z-index: 10;
+    }
+    .banner-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: rgba(255,255,255,.5); cursor: pointer;
+      transition: background var(--trans), transform var(--trans);
+      border: none;
+    }
+    .banner-dot.active { background: var(--white); transform: scale(1.3); }
+    .banner-arrow {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      z-index: 10; width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(255,255,255,.2); backdrop-filter: blur(4px);
+      border: none; cursor: pointer; color: var(--white); font-size: 1.2rem;
+      display: flex; align-items: center; justify-content: center;
+      transition: background var(--trans);
+    }
+    .banner-arrow:hover { background: var(--terra); }
+    .banner-arrow.prev { left: 20px; }
+    .banner-arrow.next { right: 20px; }
+
+    /* ===================== SECTIONS ===================== */
+    .section { padding: 80px 24px; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-header { text-align: center; margin-bottom: 50px; }
+    .section-eyebrow {
+      display: inline-block; font-size: .75rem; font-weight: 700;
+      letter-spacing: .15em; text-transform: uppercase;
+      color: var(--terra); margin-bottom: 12px;
+    }
+    .section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 900; color: var(--bark);
+      margin-bottom: 12px;
+    }
+    .section-header p { color: var(--muted); max-width: 520px; margin: 0 auto; }
+    .divider { width: 56px; height: 3px; background: var(--terra); border-radius: 2px; margin: 16px auto 0; }
+
+    /* ===================== STATS ===================== */
+    .stats { background: var(--terra); padding: 50px 24px; }
+    .stats-grid {
+      max-width: 900px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+      gap: 30px; text-align: center;
+    }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem; font-weight: 900; color: var(--white); line-height: 1;
+    }
+    .stat-label { color: rgba(255,255,255,.8); font-size: .9rem; font-weight: 600; margin-top: 6px; }
+
+    /* ===================== ANIMALS (filter + pagination) ===================== */
+    .animals-section { background: var(--warm); }
+    .filter-bar {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      margin-bottom: 36px; justify-content: center;
+    }
+    .filter-btn {
+      padding: 9px 22px; border-radius: 50px;
+      font-family: 'Nunito', sans-serif; font-size: .9rem; font-weight: 700;
+      cursor: pointer; border: 2px solid var(--sand);
+      background: var(--white); color: var(--bark-l);
+      transition: var(--trans);
+    }
+    .filter-btn:hover,
+    .filter-btn.active { background: var(--terra); border-color: var(--terra); color: var(--white); }
+    .animals-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(260px,1fr));
+      gap: 24px;
+    }
+    .animal-card {
+      background: var(--white); border-radius: var(--radius);
+      overflow: hidden; box-shadow: var(--shadow-l);
+      transition: transform var(--trans), box-shadow var(--trans);
+    }
+    .animal-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+    .animal-card.hidden { display: none; }
+    .card-img-wrap { position: relative; overflow: hidden; height: 220px; }
+    .card-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+    .animal-card:hover .card-img-wrap img { transform: scale(1.06); }
+    .card-badge {
+      position: absolute; top: 12px; left: 12px;
+      background: var(--terra); color: var(--white);
+      font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+      padding: 4px 10px; border-radius: 20px;
+    }
+    .card-body { padding: 18px 20px 22px; }
+    .card-body h3 { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; margin-bottom: 4px; color: var(--bark); }
+    .card-meta { display: flex; gap: 10px; font-size: .82rem; color: var(--muted); margin-bottom: 10px; }
+    .card-body p { font-size: .9rem; color: var(--bark-l); margin-bottom: 16px; line-height: 1.55; }
+    .card-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--warm); color: var(--terra);
+      padding: 8px 18px; border-radius: 50px;
+      font-size: .85rem; font-weight: 700; border: 2px solid var(--sand);
+      cursor: pointer; transition: var(--trans);
+    }
+    .card-btn:hover { background: var(--terra); color: var(--white); border-color: var(--terra); }
+
+    /* Pagination */
+    .pagination {
+      display: flex; gap: 6px; justify-content: center;
+      margin-top: 48px; flex-wrap: wrap;
+    }
+    .page-btn {
+      width: 40px; height: 40px; border-radius: var(--radius-s);
+      border: 2px solid var(--sand); background: var(--white);
+      font-family: 'Nunito', sans-serif; font-size: .9rem; font-weight: 700;
+      color: var(--bark-l); cursor: pointer; transition: var(--trans);
+    }
+    .page-btn:hover,
+    .page-btn.active { background: var(--terra); border-color: var(--terra); color: var(--white); }
+    .page-btn.dots { border: none; background: none; cursor: default; color: var(--muted); }
+
+    /* ===================== NEWS ===================== */
+    .news-section { background: var(--cream); }
+    .news-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+      gap: 28px;
+    }
+    .news-card {
+      background: var(--white); border-radius: var(--radius);
+      overflow: hidden; box-shadow: var(--shadow-l);
+      transition: transform var(--trans), box-shadow var(--trans);
+    }
+    .news-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .news-img { height: 200px; overflow: hidden; }
+    .news-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+    .news-card:hover .news-img img { transform: scale(1.05); }
+    .news-body { padding: 20px 22px 24px; }
+    .news-date {
+      font-size: .78rem; color: var(--muted); font-weight: 600;
+      text-transform: uppercase; letter-spacing: .08em; margin-bottom: 8px;
+    }
+    .news-body h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--bark); margin-bottom: 8px; }
+    .news-body p { font-size: .88rem; color: var(--bark-l); line-height: 1.55; }
+    .news-link { display: inline-block; margin-top: 14px; color: var(--terra); font-weight: 700; font-size: .88rem; }
+    .news-link:hover { text-decoration: underline; }
+
+    /* ===================== STAFF ===================== */
+    .staff-section { background: var(--warm); }
+    .staff-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
+      gap: 24px;
+    }
+    .staff-card {
+      background: var(--white); border-radius: var(--radius);
+      padding: 28px 20px; text-align: center;
+      box-shadow: var(--shadow-l);
+      transition: transform var(--trans);
+    }
+    .staff-card:hover { transform: translateY(-4px); }
+    .staff-avatar {
+      width: 88px; height: 88px; border-radius: 50%;
+      margin: 0 auto 14px; overflow: hidden;
+      border: 3px solid var(--sand);
+    }
+    .staff-avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .staff-name { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; color: var(--bark); }
+    .staff-role { font-size: .82rem; color: var(--terra); font-weight: 700; margin-top: 3px; }
+
+    /* ===================== VIDEO ===================== */
+    .video-section { background: var(--bark); padding: 80px 24px; }
+    .video-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+    .video-inner h2 {
+      font-family: 'Playfair Display', serif; font-size: clamp(1.8rem,3vw,2.4rem);
+      font-weight: 900; color: var(--white); margin-bottom: 12px;
+    }
+    .video-inner p { color: rgba(255,255,255,.65); margin-bottom: 36px; }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      border-radius: var(--radius); overflow: hidden;
+      box-shadow: 0 16px 48px rgba(0,0,0,.4);
+    }
+    .video-wrap iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+
+    /* ===================== CONTACT FORM ===================== */
+    .contact-section { background: var(--cream); }
+    .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+    .contact-info h3 {
+      font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 900;
+      color: var(--bark); margin-bottom: 16px;
+    }
+    .contact-info p { color: var(--bark-l); margin-bottom: 24px; }
+    .contact-detail { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 16px; }
+    .contact-icon { font-size: 1.2rem; margin-top: 1px; }
+    .contact-detail strong { display: block; font-size: .82rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 2px; }
+    .contact-detail span { color: var(--bark); font-weight: 600; }
+    .form-group { margin-bottom: 18px; }
+    .form-group label { display: block; font-size: .85rem; font-weight: 700; color: var(--bark-l); margin-bottom: 6px; }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%; padding: 12px 16px; border-radius: var(--radius-s);
+      border: 2px solid var(--sand); background: var(--white);
+      font-family: 'Nunito', sans-serif; font-size: .95rem; color: var(--text);
+      transition: border-color var(--trans);
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus { border-color: var(--terra); }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-submit { width: 100%; padding: 14px; font-size: 1rem; margin-top: 6px; }
+    .form-success {
+      display: none; background: #e8f5e9; border: 1px solid #a5d6a7;
+      border-radius: var(--radius-s); padding: 14px 18px;
+      color: #2e7d32; font-weight: 600; margin-top: 12px;
+    }
+
+    /* ===================== FOOTER ===================== */
+    .site-footer { background: var(--bark); color: rgba(255,255,255,.7); padding: 60px 24px 28px; }
+    .footer-grid {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px;
+      padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    .footer-brand .logo { color: var(--terra); margin-bottom: 12px; }
+    .footer-brand p { font-size: .88rem; line-height: 1.7; }
+    .footer-col h4 {
+      font-size: .78rem; text-transform: uppercase; letter-spacing: .12em;
+      font-weight: 700; color: var(--white); margin-bottom: 16px;
+    }
+    .footer-col ul li { margin-bottom: 8px; }
+    .footer-col ul a { font-size: .88rem; transition: color var(--trans); }
+    .footer-col ul a:hover { color: var(--terra); }
+    .footer-socials { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+    .footer-social {
+      display: flex; align-items: center; gap: 7px;
+      padding: 8px 14px; border-radius: var(--radius-s);
+      background: rgba(255,255,255,.08); font-size: .82rem; font-weight: 700;
+      color: rgba(255,255,255,.75);
+      transition: background var(--trans), color var(--trans);
+    }
+    .footer-social:hover { background: var(--terra); color: var(--white); }
+    .footer-bottom {
+      max-width: 1200px; margin: 24px auto 0;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 10px; font-size: .82rem;
+    }
+    .footer-bottom a { color: var(--terra); }
+
+    /* ===================== RESPONSIVE ===================== */
+    @media (max-width: 960px) {
+      .contact-layout { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-socials { display: none; }
+      .burger { display: flex; }
+      .banner { height: 420px; }
+      .banner-content { padding: 0 30px; }
+      .section { padding: 56px 20px; }
+    }
+    @media (max-width: 480px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .banner { height: 360px; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ===================== SCROLL ANIMATION ===================== */
+    .reveal {
+      opacity: 0; transform: translateY(24px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" role="banner">
+  <nav class="nav-inner" aria-label="Основная навигация">
+    <a href="index.html" class="logo" aria-label="На главную">
+      <span class="logo-paw" aria-hidden="true">🐾</span>
+      Тёплые лапы
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html" class="active" aria-current="page">Главная</a></li>
+      <li><a href="about.html">О нас</a></li>
+    </ul>
+    <div class="nav-socials" aria-label="Социальные сети">
+      <a href="https://vk.com/domik_melkashei" target="_blank" rel="noopener noreferrer">ВК</a>
+      <a href="https://ok.ru/group57734508904499" target="_blank" rel="noopener noreferrer">ОК</a>
+      <a href="https://t.me/aperolspitzspb" target="_blank" rel="noopener noreferrer">TG</a>
+      <a href="https://yarus.ru/shelter" target="_blank" rel="noopener noreferrer">ЯR</a>
+    </div>
+    <button class="burger" aria-label="Открыть меню" aria-expanded="false" onclick="toggleMenu(this)">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Мобильное меню">
+    <a href="index.html">Главная</a>
+    <a href="about.html">О нас</a>
+    <a href="https://vk.com/domik_melkashei" target="_blank" rel="noopener noreferrer">ВКонтакте</a>
+    <a href="https://ok.ru/group57734508904499" target="_blank" rel="noopener noreferrer">Одноклассники</a>
+    <a href="https://t.me/aperolspitzspb" target="_blank" rel="noopener noreferrer">Telegram</a>
+    <a href="https://yarus.ru/shelter" target="_blank" rel="noopener noreferrer">ЯRUS</a>
+  </div>
+</header>
+
+<!-- ============ BANNER ============ -->
+<section class="banner" aria-label="Анонсы приюта">
+  <div class="banner-slides" id="bannerSlides" role="region" aria-live="polite">
+
+    <div class="banner-slide" role="group" aria-roledescription="Слайд" aria-label="Слайд 1 из 3">
+      <img src="https://avatars.mds.yandex.net/i?id=3e82de49f6566219a2a8b2da2e81c6c14446c07b-4592506-images-thumbs&n=13" alt="Счастливая собака на прогулке">
+      <div class="banner-overlay" aria-hidden="true"></div>
+      <div class="banner-content">
+        <span class="banner-tag">Каждый питомец заслуживает любви</span>
+        <h2>Найди своего верного друга</h2>
+        <p>В нашем приюте сотни животных ждут тёплого дома. Усынови питомца — измени его жизнь навсегда.</p>
+        <a href="#animals" class="btn btn-outline">Смотреть животных</a>
+      </div>
+    </div>
+
+    <div class="banner-slide" role="group" aria-roledescription="Слайд" aria-label="Слайд 2 из 3">
+      <img src="https://avatars.mds.yandex.net/i?id=09a59f659ffcbce3360d09ae6abcfc91a89d5ae8-13039897-images-thumbs&n=13" alt="Котята в приюте">
+      <div class="banner-overlay" aria-hidden="true"></div>
+      <div class="banner-content">
+        <span class="banner-tag">Новое пополнение</span>
+        <h2>Пушистые котята ищут дом</h2>
+        <p>К нам поступило 12 новых котят. Все здоровы, привиты и готовы к переезду в добрые руки.</p>
+        <a href="#contact" class="btn btn-outline">Связаться с нами</a>
+      </div>
+    </div>
+
+    <div class="banner-slide" role="group" aria-roledescription="Слайд" aria-label="Слайд 3 из 3">
+      <img src="https://avatars.mds.yandex.net/i?id=b7071862cb820daa02db0b078f95930900ec53ee-5385409-images-thumbs&n=13" alt="Волонтёры помогают животным">
+      <div class="banner-overlay" aria-hidden="true"></div>
+      <div class="banner-content">
+        <span class="banner-tag">Стань частью команды</span>
+        <h2>Волонтёры — сердце приюта</h2>
+        <p>Присоединяйся к нашей команде добровольцев. Твоя помощь меняет судьбы животных каждый день.</p>
+        <a href="#footer" class="btn btn-outline">Стать волонтёром</a>
+      </div>
+    </div>
+
+  </div>
+
+  <button class="banner-arrow prev" onclick="shiftSlide(-1)" aria-label="Предыдущий слайд">&#8592;</button>
+  <button class="banner-arrow next" onclick="shiftSlide(1)" aria-label="Следующий слайд">&#8594;</button>
+
+  <div class="banner-dots" role="tablist" aria-label="Навигация по слайдам">
+    <button class="banner-dot active" onclick="goSlide(0)" role="tab" aria-selected="true" aria-label="Слайд 1"></button>
+    <button class="banner-dot" onclick="goSlide(1)" role="tab" aria-selected="false" aria-label="Слайд 2"></button>
+    <button class="banner-dot" onclick="goSlide(2)" role="tab" aria-selected="false" aria-label="Слайд 3"></button>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<div class="stats reveal" aria-label="Статистика приюта">
+  <div class="stats-grid">
+    <div><div class="stat-num" data-target="847">0</div><div class="stat-label">Животных пристроено</div></div>
+    <div><div class="stat-num" data-target="120">0</div><div class="stat-label">Питомцев сейчас</div></div>
+    <div><div class="stat-num" data-target="35">0</div><div class="stat-label">Волонтёров</div></div>
+    <div><div class="stat-num" data-target="12">0</div><div class="stat-label">Лет работы</div></div>
+  </div>
+</div>
+
+<!-- ============ ANIMALS ============ -->
+<section class="section animals-section" id="animals" aria-labelledby="animals-heading">
+  <div class="section-inner">
+    <header class="section-header reveal">
+      <span class="section-eyebrow">Наши питомцы</span>
+      <h2 id="animals-heading">Ищут дом прямо сейчас</h2>
+      <p>Каждый из них особенный. Познакомьтесь и, может быть, найдёте своего.</p>
+      <div class="divider" aria-hidden="true"></div>
+    </header>
+
+    <!-- Filter -->
+    <div class="filter-bar reveal" role="group" aria-label="Фильтр по категориям">
+      <button class="filter-btn active" onclick="filterAnimals('all', this)" aria-pressed="true">Все</button>
+      <button class="filter-btn" onclick="filterAnimals('dog', this)" aria-pressed="false">Собаки</button>
+      <button class="filter-btn" onclick="filterAnimals('cat', this)" aria-pressed="false">Кошки</button>
+      <button class="filter-btn" onclick="filterAnimals('other', this)" aria-pressed="false">Другие</button>
+    </div>
+
+    <div class="animals-grid" id="animalsGrid">
+      <!-- Cards -->
+      <article class="animal-card reveal" data-category="dog">
+        <div class="card-img-wrap">
+          <img src="https://avatars.mds.yandex.net/i?id=5991b8545a75d926bcceab227a4b46c31939a4fe-5262672-images-thumbs&n=13" alt="Барон — лабрадор, 3 года">
+          <span class="card-badge">Собака</span>
+        </div>
+        <div class="card-body">
+          <h3>Барон</h3>
+          <div class="card-meta"><span>3 года</span><span>·</span><span>Лабрадор</span></div>
+          <p>Добрый и активный пёс. Обожает прогулки и детей. Привит, стерилизован. Мечтает о большом доме с садом.</p>
+          <button class="card-btn" onclick="adoptPet('Барон')">Познакомиться 🐾</button>
+        </div>
+      </article>
+
+      <article class="animal-card reveal" data-category="cat">
+        <div class="card-img-wrap">
+          <img src="https://avatars.mds.yandex.net/i?id=5d9905a1ed981e3c8f3cd68d675ceafc34f110b7-4935648-images-thumbs&n=13" alt="Мила — кошка, 2 года">
+          <span class="card-badge">Кошка</span>
+        </div>
+        <div class="card-body">
+          <h3>Мила</h3>
+          <div class="card-meta"><span>2 года</span><span>·</span><span>Британская</span></div>
+          <p>Ласковая и спокойная красавица. Любит уютные вечера и общение с хозяином. Отлично ладит с другими кошками.</p>
+          <button class="card-btn" onclick="adoptPet('Мила')">Познакомиться 🐾</button>
+        </div>
+      </article>
+
+      <article class="animal-card reveal" data-category="dog">
+        <div class="card-img-wrap">
+          <img src="https://avatars.mds.yandex.net/i?id=ea23e5ad0ce9bf11f26b6538a216f92d341a6535-6142261-images-thumbs&n=13" alt="Рекс — хаски, 4 года">
+          <span class="card-badge">Собака</span>
+        </div>
+        <div class="card-body">
+          <h3>Рекс</h3>
+          <div class="card-meta"><span>4 года</span><span>·</span><span>Хаски</span></div>
+          <p>Энергичный и преданный хаски. Нуждается в активных прогулках. Прекрасный компаньон для спорта.</p>
+          <button class="card-btn" onclick="adoptPet('Рекс')">Познакомиться 🐾</button>
+        </div>
+      </article>
+
+      <article class="animal-card reveal" data-category="cat">
+        <div class="card-img-wrap">
+          <img src="https://avatars.mds.yandex.net/i?id=765cd535e3012592c3c87554992d7e02dc8f80d6-5242958-images-thumbs&n=13" alt="Пушок — кот, 1 год">
+          <span class="card-badge">Кошка</span>
+        </div>
+        <div class="card-body">
+          <h3>Пушок</h3>
+          <div class="card-meta"><span>1 год</span><span>·</span><span>Беспородный</span></div>
+          <p>Молодой и игривый котёнок. Очень привязчивый. Подойдёт даже для семей с маленькими детьми.</p>
+          <button class="card-btn" onclick="adoptPet('Пушок')">Познакомиться 🐾</button>
+        </div>
+      </article>
+
+      <article class="animal-card reveal" data-category="other">
+        <div class="card-img-wrap">
+          <img src="https://avatars.mds.yandex.net/i?id=34e03db6eb67a192d3df0c5d520cec1ff2bfdc0c-4011753-images-thumbs&n=13" alt="Персик — кролик, 1 год">
+          <span class="card-badge">Другое</span>
+        </div>
+        <div class="card-body">
+          <h3>Персик</h3>
+          <div class="card-meta"><span>1 год</span><span>·</span><span>Кролик</span></div>
+          <p>Нежный и любопытный кролик породы рекс. Тихий и ухоженный — идеально для квартиры.</p>
+          <button class="card-btn" onclick="adoptPet('Персик')">Познакомиться 🐾</button>
+        </div>
+      </article>
+
+      <article class="animal-card reveal" data-category="dog">
+        <div class="card-img-wrap">
+          <img src="https://avatars.mds.yandex.net/i?id=292da7a319fa5bdf933ce520bc43fa5455d2d2b4-9730803-images-thumbs&n=13" alt="Белла — спаниель, 5 лет">
+          <span class="card-badge">Собака</span>
+        </div>
+        <div class="card-body">
+          <h3>Белла</h3>
+          <div class="card-meta"><span>5 лет</span><span>·</span><span>Спаниель</span></div>
+          <p>Мягкая и воспитанная. Хорошо обучена, послушна. Любит детей и комфорт домашней жизни.</p>
+          <button class="card-btn" onclick="adoptPet('Белла')">Познакомиться 🐾</button>
+        </div>
+      </article>
+
+      <article class="animal-card reveal" data-category="dog">
+        <div class="card-img-wrap">
+          <img src="https://avatars.mds.yandex.net/i?id=25d68e12ad4ccc3e5f6938bbd5aa5faf67802a76-3713143-images-thumbs&n=13" alt="Тортилла — черепашка, 10 лет">
+          <span class="card-badge">Другое</span>
+        </div>
+        <div class="card-body">
+          <h3>Тортилла</h3>
+          <div class="card-meta"><span>10 лет</span><span>·</span><span>Черепашка</span></div>
+          <p>Мудрая старейшина, даёт советы всем новичкам</p>
+          <button class="card-btn" onclick="adoptPet('Белла')">Познакомиться 🐾</button>
+        </div>
+      </article>
+
+      <article class="animal-card reveal" data-category="dog">
+        <div class="card-img-wrap">
+          <img src="https://avatars.mds.yandex.net/i?id=f0f450074cac64ed9c438c8da0f942d8a161d22d-5147134-images-thumbs&n=13" alt="Пушок — кролик, 2 года">
+          <span class="card-badge">Другое</span>
+        </div>
+        <div class="card-body">
+          <h3>Пушок</h3>
+          <div class="card-meta"><span>2 года</span><span>·</span><span>Кролик</span></div>
+          <p>Белоснежный, пушистый, с розово-голубыми глазами. Очень ласковый, робкий, любит тишину. Спит «бубликом», ест морковку кусочками, не топает, а семенит. Идеальный спокойный друг.</p>
+          <button class="card-btn" onclick="adoptPet('Белла')">Познакомиться 🐾</button>
+        </div>
+      </article>
+
+      <article class="animal-card reveal" data-category="dog">
+        <div class="card-img-wrap">
+          <img src="https://avatars.mds.yandex.net/i?id=b644235e5b04e83bcd6f5f5a9bd1d3b80184dc55-13196350-images-thumbs&n=13" alt="Шарик — хомяк, 3 года">
+          <span class="card-badge">Другое</span>
+        </div>
+        <div class="card-body">
+          <h3>Шарик</h3>
+          <div class="card-meta"><span>3 года</span><span>·</span><span>Хомяк</span></div>
+          <p>надувает щёки так, что становится идеально круглым.</p>
+          <button class="card-btn" onclick="adoptPet('Белла')">Познакомиться 🐾</button>
+        </div>
+      </article>
+
+      <article class="animal-card reveal" data-category="dog">
+        <div class="card-img-wrap">
+          <img src="https://avatars.mds.yandex.net/i?id=e695c6a2d40fe2afe7120b0b1a9f8a265ef971d1-8240464-images-thumbs&n=13" alt="Жора — хомяк, 1 год">
+          <span class="card-badge">Другое</span>
+        </div>
+        <div class="card-body">
+          <h3>Жора</h3>
+          <div class="card-meta"><span>1 год</span><span>·</span><span>Хомяк</span></div>
+          <p>Главный едок приюта, его мисочка пустеет быстрее всех.</p>
+          <button class="card-btn" onclick="adoptPet('Белла')">Познакомиться 🐾</button>
+        </div>
+      </article>
+    </div>
+
+    <!-- Pagination -->
+    <nav class="pagination reveal" aria-label="Страницы с животными">
+      <button class="page-btn active" onclick="goPage(1,this)" aria-current="page" aria-label="Страница 1">1</button>
+      <button class="page-btn" onclick="goPage(2,this)" aria-label="Страница 2">2</button>
+      <button class="page-btn" onclick="goPage(3,this)" aria-label="Страница 3">3</button>
+      <button class="page-btn dots" aria-hidden="true">…</button>
+      <button class="page-btn" onclick="goPage(8,this)" aria-label="Страница 8">8</button>
+    </nav>
+  </div>
+</section>
+
+<!-- ============ NEWS ============ -->
+<section class="section news-section" id="news" aria-labelledby="news-heading">
+  <div class="section-inner">
+    <header class="section-header reveal">
+      <span class="section-eyebrow">Новости</span>
+      <h2 id="news-heading">Последние события</h2>
+      <p>Следите за жизнью приюта — истории, события, успехи.</p>
+      <div class="divider" aria-hidden="true"></div>
+    </header>
+    <div class="news-grid">
+
+      <article class="news-card reveal">
+        <div class="news-img">
+          <img src="https://avatars.mds.yandex.net/i?id=7d3a26d3a66962cf59a82b8dccae9164bfa21bc1-10701575-images-thumbs&n=13" alt="Новость: день открытых дверей">
+        </div>
+        <div class="news-body">
+          <time class="news-date" datetime="2025-04-18">18 апреля 2026</time>
+          <h3>День открытых дверей: 200 гостей и 15 усыновлений!</h3>
+          <p>Прошедшее мероприятие стало рекордным — 15 животных нашли новых хозяев за один день.</p>
+          <a href="#" class="news-link">Читать подробнее →</a>
+        </div>
+      </article>
+
+      <article class="news-card reveal">
+        <div class="news-img">
+          <img src="https://avatars.mds.yandex.net/i?id=a1533e9851c6a3750281811eba06be787fe9b8f8-12679713-images-thumbs&n=13" alt="Новость: новый ветеринарный кабинет">
+        </div>
+        <div class="news-body">
+          <time class="news-date" datetime="2025-04-05">5 апреля 2026</time>
+          <h3>Открытие нового ветеринарного кабинета</h3>
+          <p>Благодаря поддержке спонсоров мы оснастили современный ветеринарный кабинет для питомцев.</p>
+          <a href="#" class="news-link">Читать подробнее →</a>
+        </div>
+      </article>
+
+      <article class="news-card reveal">
+        <div class="news-img">
+          <img src="https://avatars.mds.yandex.net/i?id=2a0000019dfbfdb00b1bead5f72f5c5dec82-1531182-fast-images&n=13" alt="Новость: волонтёрская программа">
+        </div>
+        <div class="news-body">
+          <time class="news-date" datetime="2025-03-22">22 марта 2026</time>
+          <h3>Запуск весенней волонтёрской программы</h3>
+          <p>Принимаем волонтёров в возрасте от 14 лет. Обучение, гибкий график и тёплая атмосфера.</p>
+          <a href="#" class="news-link">Читать подробнее →</a>
+        </div>
+      </article>
+
+      <article class="news-card reveal">
+        <div class="news-img">
+          <img src="https://avatars.mds.yandex.net/i?id=be12175434e57caeb1fe898056dd51c7df6b5cc5-13312075-images-thumbs&n=13" alt="❄️ Холода приходят, а мы расширяемся!">
+        </div>
+        <div class="news-body">
+          <time class="news-date" datetime="2025-03-22">22 января 2026</time>
+          <h3>❄️ Холода приходят, а мы расширяемся!</h3>
+          <p>Друзья, по прогнозам синоптиков, грядут ранние заморозки. 
+            В нашем вольерном комплексе «Теплые лапы» закончились места для крупных собак. Сегодня ночью волонтеры нашли на трассе трех щенков. Нам срочно нужно утеплить два дополнительных вагончика и 
+            закупить 10 новых лежаков с подогревом.</p>
+          <a href="#" class="news-link">Читать подробнее →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STAFF ============ -->
+<section class="section staff-section" aria-labelledby="staff-heading">
+  <div class="section-inner">
+    <header class="section-header reveal">
+      <span class="section-eyebrow">Команда</span>
+      <h2 id="staff-heading">Люди, которые заботятся</h2>
+      <p>Наши сотрудники и волонтёры — душа приюта.</p>
+      <div class="divider" aria-hidden="true"></div>
+    </header>
+    <div class="staff-grid">
+      <div class="staff-card reveal">
+        <div class="staff-avatar"><img src="https://avatars.mds.yandex.net/i?id=a93eb04cd8ce693e601869ee70e5092604c9d9b6-5879173-images-thumbs&n=13" alt="Анна Смирнова"></div>
+        <div class="staff-name">Анна Смирнова</div>
+        <div class="staff-role">Директор</div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="staff-avatar"><img src="https://avatars.mds.yandex.net/i?id=9b82b413b5380ed97df9d08da023c55d89071fb0-5878385-images-thumbs&n=13" alt="Дмитрий Козлов"></div>
+        <div class="staff-name">Дмитрий Козлов</div>
+        <div class="staff-role">Ветеринар</div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="staff-avatar"><img src="https://avatars.mds.yandex.net/i?id=1028e936a0854ea84a4f812e133c3de71dbf1a41-4080712-images-thumbs&n=13" alt="Мария Петрова"></div>
+        <div class="staff-name">Мария Петрова</div>
+        <div class="staff-role">Куратор кошек</div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="staff-avatar"><img src="https://avatars.mds.yandex.net/i?id=cfae3d0f0a72c5e6abed1cf85aceb3c0d1ad4d59-5210621-images-thumbs&n=13" alt="Игорь Фёдоров"></div>
+        <div class="staff-name">Игорь Фёдоров</div>
+        <div class="staff-role">Куратор собак</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ VIDEO ============ -->
+<section class="video-section reveal" aria-labelledby="video-heading">
+  <div class="video-inner">
+    <h2 id="video-heading">Загляните к нам</h2>
+    <p>Посмотрите небольшой ролик о жизни нашего приюта и его питомцах.</p>
+    <div class="video-wrap">
+      <!-- Замените VIDEO_ID на реальный YouTube ID -->
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/2t_-6FEQXw4?si=AMpNGIncyGlyhOi2" 
+      title="YouTube video player" frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; 
+      encrypted-media; gyroscope; picture-in-picture; 
+      web-share" referrerpolicy="strict-origin-when-cross-origin" 
+      allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT FORM ============ -->
+<section class="section contact-section" id="contact" aria-labelledby="contact-heading">
+  <div class="section-inner">
+    <header class="section-header reveal">
+      <span class="section-eyebrow">Обратная связь</span>
+      <h2 id="contact-heading">Напишите нам</h2>
+      <p>Есть вопросы об усыновлении или хотите помочь? Мы ответим в течение 24 часов.</p>
+      <div class="divider" aria-hidden="true"></div>
+    </header>
+    <div class="contact-layout">
+      <div class="contact-info reveal">
+        <h3>Как с нами связаться</h3>
+        <p>Вы можете приехать лично, позвонить или написать через любую удобную форму.</p>
+        <div class="contact-detail">
+          <span class="contact-icon" aria-hidden="true">📍</span>
+          <div>
+            <strong>Адрес</strong>
+            <span>г. Москва, ул. Лесная, д. 24, стр. 3</span>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-icon" aria-hidden="true">📞</span>
+          <div>
+            <strong>Телефон</strong>
+            <span><a href="tel:+74951234567">+7 (495) 123-45-67</a></span>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-icon" aria-hidden="true">✉️</span>
+          <div>
+            <strong>Электронная почта</strong>
+            <span><a href="mailto:info@teplyelapy.ru">info@teplyelapy.ru</a></span>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-icon" aria-hidden="true">🕐</span>
+          <div>
+            <strong>Часы работы</strong>
+            <span>Ежедневно: 10:00 — 19:00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fname">Имя *</label>
+              <input type="text" id="fname" name="fname" placeholder="Ваше имя" required autocomplete="given-name">
+            </div>
+            <div class="form-group">
+              <label for="lname">Фамилия</label>
+              <input type="text" id="lname" name="lname" placeholder="Фамилия" autocomplete="family-name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Электронная почта *</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="phone">Телефон</label>
+            <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel">
+          </div>
+          <div class="form-group">
+            <label for="subject">Тема</label>
+            <select id="subject" name="subject">
+              <option value="">Выберите тему...</option>
+              <option>Усыновление животного</option>
+              <option>Волонтёрство</option>
+              <option>Пожертвование</option>
+              <option>Другое</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Сообщение *</label>
+            <textarea id="message" name="message" placeholder="Ваш вопрос или предложение..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit">Отправить сообщение ✉️</button>
+          <div class="form-success" id="formSuccess" role="alert">
+            ✅ Спасибо! Ваше сообщение отправлено. Мы свяжемся с вами в ближайшее время.
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer" id="footer" role="contentinfo">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo" aria-label="Тёплые лапы — на главную">
+        <span class="logo-paw" aria-hidden="true">🐾</span>
+        Тёплые лапы
+      </a>
+      <p>Приют для бездомных животных с 2013 года. Помогаем найти каждому питомцу любящую семью.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Страницы</h4>
+      <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="about.html">О нас</a></li>
+        <li><a href="#animals">Животные</a></li>
+        <li><a href="#news">Новости</a></li>
+        <li><a href="#contact">Контакты</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Помочь</h4>
+      <ul>
+        <li><a href="#contact">Усыновить питомца</a></li>
+        <li><a href="#contact">Стать волонтёром</a></li>
+        <li><a href="#contact">Сделать пожертвование</a></li>
+        <li><a href="#contact">Временная опека</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Социальные сети</h4>
+      <div class="footer-socials">
+        <a href="https://vk.com/domik_melkashei" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="ВКонтакте">
+          <span aria-hidden="true">ВК</span> ВКонтакте
+        </a>
+        <a href="https://ok.ru/group57734508904499" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="Одноклассники">
+          <span aria-hidden="true">ОК</span> Одноклассники
+        </a>
+        <a href="https://t.me/aperolspitzspb" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="Telegram">
+          <span aria-hidden="true">TG</span> Telegram
+        </a>
+        <a href="https://yarus.ru/shelter" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="ЯRUS"> 
+          <span aria-hidden="true">ЯR</span> ЯRUS
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Приют «Тёплые лапы». Все права защищены.</span>
+    <span>Тема: <strong>WarmPaws v1.0</strong> | <a href="#">Политика конфиденциальности</a></span>
+  </div>
+</footer>
+
+<!-- ============ SCRIPTS ============ -->
+<script>
+  /* --- Mobile menu --- */
+  function toggleMenu(btn) {
+    const menu = document.getElementById('mobileMenu');
+    const open = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  }
+
+  /* --- Banner slider --- */
+  let currentSlide = 0;
+  const SLIDE_COUNT = 3;
+  const slides = document.getElementById('bannerSlides');
+  const dots = document.querySelectorAll('.banner-dot');
+
+  function goSlide(n) {
+    currentSlide = (n + SLIDE_COUNT) % SLIDE_COUNT;
+    slides.style.transform = `translateX(-${currentSlide * 100}%)`;
+    dots.forEach((d, i) => {
+      d.classList.toggle('active', i === currentSlide);
+      d.setAttribute('aria-selected', i === currentSlide);
+    });
+  }
+  function shiftSlide(dir) { goSlide(currentSlide + dir); }
+  setInterval(() => shiftSlide(1), 5000);
+
+  /* --- Filter animals --- */
+  function filterAnimals(cat, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => {
+      b.classList.remove('active'); b.setAttribute('aria-pressed', 'false');
+    });
+    btn.classList.add('active'); btn.setAttribute('aria-pressed', 'true');
+    document.querySelectorAll('.animal-card').forEach(card => {
+      const match = cat === 'all' || card.dataset.category === cat;
+      card.classList.toggle('hidden', !match);
+    });
+  }
+
+  /* --- Pagination (demo) --- */
+  function goPage(n, btn) {
+    document.querySelectorAll('.page-btn:not(.dots)').forEach(b => {
+      b.classList.remove('active'); b.removeAttribute('aria-current');
+    });
+    btn.classList.add('active'); btn.setAttribute('aria-current', 'page');
+  }
+
+  /* --- Adopt pet modal --- */
+  function adoptPet(name) {
+    document.getElementById('subject').value = 'Усыновление животного';
+    document.getElementById('message').value = `Здравствуйте! Меня интересует ${name}. Расскажите, пожалуйста, подробнее.`;
+    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  /* --- Contact form --- */
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const req = this.querySelectorAll('[required]');
+    let ok = true;
+    req.forEach(f => { if (!f.value.trim()) { f.style.borderColor = '#e53935'; ok = false; } else { f.style.borderColor = ''; } });
+    if (!ok) return;
+    document.getElementById('formSuccess').style.display = 'block';
+    this.reset();
+    setTimeout(() => document.getElementById('formSuccess').style.display = 'none', 5000);
+  });
+
+  /* --- Scroll reveal --- */
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  /* --- Counter animation --- */
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const el = e.target;
+        const target = parseInt(el.dataset.target);
+        let cur = 0;
+        const step = Math.ceil(target / 60);
+        const timer = setInterval(() => {
+          cur = Math.min(cur + step, target);
+          el.textContent = cur;
+          if (cur >= target) clearInterval(timer);
+        }, 25);
+        counterObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.stat-num[data-target]').forEach(el => counterObserver.observe(el));
+</script>
+
+</body>
+</html>

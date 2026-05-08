@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="О нас — Приют «Тёплые лапы». Наша история, адрес, контакты, команда и как нам помочь.">
+  <meta name="keywords" content="приют животных о нас, адрес приюта, контакты приюта, история приюта тёплые лапы">
+  <meta name="author" content="Тёплые лапы">
+  <meta property="og:title" content="О нас — Приют «Тёплые лапы»">
+  <meta property="og:description" content="История, миссия, адрес и контакты приюта для животных «Тёплые лапы»">
+  <meta property="og:type" content="website">
+  <title>Тёплые лапы — О нас</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- Google Analytics (GA4) — замените G-XXXXXXXXXX на свой ID -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <style>
+    /* ===== VARIABLES ===== */
+    :root {
+      --cream:   #FAF6F0;
+      --warm:    #F5EDE0;
+      --sand:    #E8D8C0;
+      --terra:   #C8714A;
+      --terra-d: #A85835;
+      --green:   #4A7C59;
+      --bark:    #3D2B1F;
+      --bark-l:  #6B4C38;
+      --text:    #2E1F15;
+      --muted:   #8A7060;
+      --white:   #FFFFFF;
+      --shadow:  0 4px 24px rgba(61,43,31,.12);
+      --shadow-l:0 2px 10px rgba(61,43,31,.08);
+      --radius:  16px;
+      --radius-s:8px;
+      --trans:   .3s cubic-bezier(.4,0,.2,1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Nunito', sans-serif; background: var(--cream); color: var(--text); line-height: 1.7; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    /* ===== HEADER ===== */
+    .site-header {
+      position: sticky; top: 0; z-index: 1000;
+      background: rgba(250,246,240,.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--sand);
+      padding: 0 24px;
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 70px; gap: 20px;
+    }
+    .logo {
+      display: flex; align-items: center; gap: 10px;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem; font-weight: 900; color: var(--terra);
+    }
+    .logo-paw { font-size: 1.6rem; }
+    .nav-links { display: flex; gap: 4px; }
+    .nav-links a {
+      padding: 8px 16px; border-radius: var(--radius-s);
+      font-weight: 600; font-size: .95rem; color: var(--bark-l);
+      transition: background var(--trans), color var(--trans);
+    }
+    .nav-links a:hover, .nav-links a.active { background: var(--terra); color: var(--white); }
+    .nav-socials { display: flex; gap: 8px; align-items: center; }
+    .nav-socials a {
+      width: 36px; height: 36px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--warm); font-size: .85rem; font-weight: 700;
+      color: var(--bark-l);
+      transition: background var(--trans), color var(--trans), transform var(--trans);
+    }
+    .nav-socials a:hover { background: var(--terra); color: var(--white); transform: scale(1.1); }
+    .burger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+    }
+    .burger span { display: block; width: 24px; height: 2px; background: var(--bark); border-radius: 2px; }
+    .mobile-menu {
+      display: none; flex-direction: column; gap: 4px;
+      padding: 16px 24px; background: var(--warm);
+      border-bottom: 1px solid var(--sand);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      padding: 10px 14px; border-radius: var(--radius-s);
+      font-weight: 600; color: var(--bark-l); transition: background var(--trans);
+    }
+    .mobile-menu a:hover { background: var(--sand); }
+
+    /* ===== PAGE HERO ===== */
+    .page-hero {
+      position: relative; overflow: hidden;
+      height: 360px; display: flex; align-items: center;
+    }
+    .page-hero img {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; object-position: center 40%;
+    }
+    .page-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(90deg, rgba(61,43,31,.8) 0%, rgba(61,43,31,.25) 65%);
+    }
+    .page-hero-content {
+      position: relative; z-index: 1; padding: 0 60px; max-width: 640px;
+    }
+    .breadcrumb {
+      display: flex; gap: 8px; align-items: center;
+      font-size: .8rem; color: rgba(255,255,255,.65);
+      margin-bottom: 12px; font-weight: 600;
+    }
+    .breadcrumb a { color: rgba(255,255,255,.65); transition: color var(--trans); }
+    .breadcrumb a:hover { color: var(--white); }
+    .breadcrumb span { color: var(--white); }
+    .page-hero-content h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 900;
+      color: var(--white); line-height: 1.15; margin-bottom: 12px;
+    }
+    .page-hero-content p { color: rgba(255,255,255,.8); font-size: 1.05rem; }
+
+    /* ===== SECTIONS ===== */
+    .section { padding: 80px 24px; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .section-eyebrow {
+      display: inline-block; font-size: .75rem; font-weight: 700;
+      letter-spacing: .15em; text-transform: uppercase; color: var(--terra);
+      margin-bottom: 10px;
+    }
+    .section-inner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 900; color: var(--bark);
+      margin-bottom: 16px;
+    }
+    .divider-left { width: 56px; height: 3px; background: var(--terra); border-radius: 2px; margin: 0 0 28px; }
+
+    /* ===== ABOUT LAYOUT ===== */
+    .about-layout {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+      align-items: center;
+    }
+    .about-text p { color: var(--bark-l); margin-bottom: 16px; }
+    .about-img-grid {
+      display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: 200px 200px;
+      gap: 12px;
+    }
+    .about-img-grid img { width: 100%; height: 100%; object-fit: cover; border-radius: var(--radius-s); }
+    .about-img-grid .img-tall { grid-row: 1 / 3; }
+    .about-img-grid .img-tall img { height: 100%; }
+
+    /* ===== MISSION ===== */
+    .mission-section { background: var(--bark); }
+    .mission-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+      gap: 32px;
+    }
+    .mission-card {
+      background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius); padding: 32px 28px;
+      transition: background var(--trans);
+    }
+    .mission-card:hover { background: rgba(255,255,255,.12); }
+    .mission-icon { font-size: 2.2rem; margin-bottom: 16px; }
+    .mission-card h3 {
+      font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700;
+      color: var(--white); margin-bottom: 8px;
+    }
+    .mission-card p { color: rgba(255,255,255,.65); font-size: .9rem; line-height: 1.65; }
+
+    /* ===== TIMELINE ===== */
+    .timeline-section { background: var(--warm); }
+    .timeline { position: relative; padding-left: 28px; }
+    .timeline::before {
+      content: ''; position: absolute; left: 8px; top: 6px;
+      bottom: 0; width: 2px; background: var(--sand);
+    }
+    .timeline-item { position: relative; margin-bottom: 36px; }
+    .timeline-dot {
+      position: absolute; left: -24px; top: 5px;
+      width: 14px; height: 14px; border-radius: 50%;
+      background: var(--terra); border: 2px solid var(--white);
+      box-shadow: 0 0 0 3px var(--sand);
+    }
+    .timeline-year {
+      font-size: .78rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--terra); margin-bottom: 4px;
+    }
+    .timeline-item h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--bark); margin-bottom: 6px; }
+    .timeline-item p { color: var(--bark-l); font-size: .92rem; }
+
+    /* ===== GALLERY ===== */
+    .gallery-section { background: var(--cream); }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 220px;
+      gap: 12px;
+    }
+    .gallery-item { overflow: hidden; border-radius: var(--radius-s); }
+    .gallery-item:first-child { grid-column: span 2; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+    .gallery-item:hover img { transform: scale(1.05); }
+
+    /* ===== VIDEO ===== */
+    .video-section-about { background: var(--warm); padding: 80px 24px; }
+    .video-inner-about { max-width: 900px; margin: 0 auto; }
+    .video-inner-about h2 {
+      font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 900; color: var(--bark); margin-bottom: 10px;
+    }
+    .video-inner-about p { color: var(--muted); margin-bottom: 28px; }
+    .video-wrap {
+      position: relative; padding-bottom: 56.25%; height: 0;
+      border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow);
+    }
+    .video-wrap iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+    /* ===== CONTACTS PAGE ===== */
+    .contact-page-section { background: var(--cream); }
+    .contact-page-layout {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start;
+    }
+    .contact-block { background: var(--white); border-radius: var(--radius); padding: 36px 32px; box-shadow: var(--shadow-l); }
+    .contact-block h3 {
+      font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700;
+      color: var(--bark); margin-bottom: 20px;
+    }
+    .contact-row { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 20px; }
+    .cicon { font-size: 1.3rem; margin-top: 2px; flex-shrink: 0; }
+    .cinfo strong { display: block; font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 2px; }
+    .cinfo a, .cinfo span { font-weight: 600; color: var(--bark); font-size: .95rem; }
+    .cinfo a:hover { color: var(--terra); text-decoration: underline; }
+
+    .map-placeholder {
+      background: linear-gradient(135deg, var(--sand) 0%, var(--warm) 100%);
+      border-radius: var(--radius); height: 280px; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; padding: 24px; margin-top: 20px;
+      border: 2px dashed var(--sand);
+    }
+    .map-placeholder p { color: var(--muted); font-size: .9rem; }
+    .map-placeholder strong { display: block; font-size: 1.1rem; color: var(--bark); margin-bottom: 6px; }
+
+    .socials-block { background: var(--terra); border-radius: var(--radius); padding: 32px; color: var(--white); }
+    .socials-block h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 8px; }
+    .socials-block p { color: rgba(255,255,255,.75); font-size: .9rem; margin-bottom: 20px; }
+    .social-links-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .social-link-btn {
+      display: flex; align-items: center; gap: 10px;
+      padding: 12px 16px; border-radius: var(--radius-s);
+      background: rgba(255,255,255,.15); color: var(--white); font-weight: 700;
+      font-size: .9rem; transition: background var(--trans);
+    }
+    .social-link-btn:hover { background: rgba(255,255,255,.3); }
+    .social-abbr { font-size: 1.1rem; }
+
+    /* ===== STAFF ===== */
+    .staff-section { background: var(--warm); }
+    .staff-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
+      gap: 24px;
+    }
+    .staff-card {
+      background: var(--white); border-radius: var(--radius);
+      padding: 28px 20px; text-align: center; box-shadow: var(--shadow-l);
+      transition: transform var(--trans);
+    }
+    .staff-card:hover { transform: translateY(-4px); }
+    .staff-avatar { width: 88px; height: 88px; border-radius: 50%; margin: 0 auto 14px; overflow: hidden; border: 3px solid var(--sand); }
+    .staff-avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .staff-name { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; color: var(--bark); }
+    .staff-role { font-size: .82rem; color: var(--terra); font-weight: 700; margin-top: 3px; }
+    .staff-bio { font-size: .83rem; color: var(--muted); margin-top: 8px; line-height: 1.5; }
+
+    /* ===== FOOTER ===== */
+    .site-footer { background: var(--bark); color: rgba(255,255,255,.7); padding: 60px 24px 28px; }
+    .footer-grid {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px;
+      padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    .footer-brand .logo { color: var(--terra); margin-bottom: 12px; }
+    .footer-brand p { font-size: .88rem; line-height: 1.7; }
+    .footer-col h4 { font-size: .78rem; text-transform: uppercase; letter-spacing: .12em; font-weight: 700; color: var(--white); margin-bottom: 16px; }
+    .footer-col ul li { margin-bottom: 8px; }
+    .footer-col ul a { font-size: .88rem; transition: color var(--trans); }
+    .footer-col ul a:hover { color: var(--terra); }
+    .footer-socials { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+    .footer-social {
+      display: flex; align-items: center; gap: 7px;
+      padding: 8px 14px; border-radius: var(--radius-s);
+      background: rgba(255,255,255,.08); font-size: .82rem; font-weight: 700;
+      color: rgba(255,255,255,.75); transition: background var(--trans), color var(--trans);
+    }
+    .footer-social:hover { background: var(--terra); color: var(--white); }
+    .footer-bottom {
+      max-width: 1200px; margin: 24px auto 0;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 10px; font-size: .82rem;
+    }
+    .footer-bottom a { color: var(--terra); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 960px) {
+      .about-layout, .contact-page-layout { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-socials { display: none; }
+      .burger { display: flex; }
+      .page-hero { height: 280px; }
+      .page-hero-content { padding: 0 24px; }
+      .section { padding: 56px 20px; }
+      .gallery-grid { grid-template-columns: 1fr 1fr; }
+      .gallery-item:first-child { grid-column: span 2; }
+      .social-links-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .about-img-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+      .about-img-grid .img-tall { grid-row: auto; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .gallery-item:first-child { grid-column: span 1; }
+    }
+
+    /* ===== REVEAL ===== */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header" role="banner">
+  <nav class="nav-inner" aria-label="Основная навигация">
+    <a href="index.html" class="logo" aria-label="На главную">
+      <span class="logo-paw" aria-hidden="true">🐾</span>
+      Тёплые лапы
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="about.html" class="active" aria-current="page">О нас</a></li>
+    </ul>
+    <div class="nav-socials" aria-label="Социальные сети">
+      <a href="https://vk.com/domik_melkashei" target="_blank" rel="noopener noreferrer">ВК</a>
+      <a href="https://ok.ru/group57734508904499" target="_blank" rel="noopener noreferrer">ОК</a>
+      <a href="https://t.me/aperolspitzspb" target="_blank" rel="noopener noreferrer">TG</a>
+      <a href="https://yarus.ru/shelter" target="_blank" rel="noopener noreferrer">ЯR</a>
+    </div>
+    <button class="burger" aria-label="Открыть меню" aria-expanded="false" onclick="toggleMenu(this)">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Мобильное меню">
+    <a href="index.html">Главная</a>
+    <a href="about.html">О нас</a>
+    <a href="https://vk.com/domik_melkashei" target="_blank" rel="noopener noreferrer">ВКонтакте</a>
+    <a href="https://ok.ru/group57734508904499" target="_blank" rel="noopener noreferrer">Одноклассники</a>
+    <a href="https://t.me/aperolspitzspb" target="_blank" rel="noopener noreferrer">Telegram</a>
+    <a href="https://yarus.ru/shelter" target="_blank" rel="noopener noreferrer">ЯRUS</a>
+  </div>
+</header>
+
+<!-- ===== PAGE HERO ===== -->
+<div class="page-hero" role="img" aria-label="Страница о приюте">
+  <img src="https://avatars.mds.yandex.net/i?id=95bd3b502916f8e214d286e46c0d766285a25b55-4577020-images-thumbs&n=13" alt="Волонтёры с животными в приюте">
+  <div class="page-hero-overlay" aria-hidden="true"></div>
+  <div class="page-hero-content">
+    <nav class="breadcrumb" aria-label="Хлебные крошки">
+      <a href="index.html">Главная</a>
+      <span aria-hidden="true">›</span>
+      <span aria-current="page">О нас</span>
+    </nav>
+    <h1>О нашем приюте</h1>
+    <p>Более 12 лет мы помогаем бездомным животным найти любящий дом</p>
+  </div>
+</div>
+
+<!-- ===== ABOUT ===== -->
+<section class="section" aria-labelledby="about-heading">
+  <div class="section-inner">
+    <div class="about-layout">
+      <div class="about-text reveal">
+        <span class="section-eyebrow">Наша история</span>
+        <h2 id="about-heading">Приют «Тёплые лапы»</h2>
+        <div class="divider-left" aria-hidden="true"></div>
+        <p>Приют «Тёплые лапы» был основан в 2013 году группой неравнодушных людей — Анной Смирновой и её командой волонтёров. Всё началось с небольшого арендованного помещения на 15 животных, а сегодня мы принимаем более 120 питомцев одновременно.</p>
+        <p>За эти годы мы пристроили более 847 животных, открыли собственный ветеринарный кабинет, запустили программу временной опеки и обучения волонтёров. Наш приют — это не просто здание, это семья людей и животных, объединённых любовью.</p>
+        <p>Мы работаем без государственного финансирования — только благодаря пожертвованиям и труду волонтёров. Каждый, кто усыновляет питомца, жертвует или просто распространяет информацию — делает возможным наше существование.</p>
+      </div>
+      <div class="about-img-grid reveal">
+        <div class="img-tall">
+          <img src="https://avatars.mds.yandex.net/i?id=b55f057d2771d19e3fedbd0a6ea8fec2489a2c18-8102231-images-thumbs&n=13" alt="Собаки в приюте">
+        </div>
+        <div>
+          <img src="https://avatars.mds.yandex.net/i?id=23e367b18ff73811be678e206a91b1c69b92615f-16360488-images-thumbs&n=13" alt="Кошки в приюте">
+        </div>
+        <div>
+          <img src="https://avatars.mds.yandex.net/i?id=d61c6a69f8ca78f2f28b23b9dd76e24c357b67e3-3708990-images-thumbs&n=13" alt="Волонтёр с собакой">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MISSION ===== -->
+<section class="mission-section section" aria-labelledby="mission-heading">
+  <div class="section-inner">
+    <div class="section-eyebrow" style="color:rgba(255,255,255,.55)">Наши ценности</div>
+    <h2 id="mission-heading" style="color:var(--white);margin-bottom:36px">Миссия и принципы</h2>
+    <div class="mission-inner">
+      <div class="mission-card reveal">
+        <div class="mission-icon" aria-hidden="true">❤️</div>
+        <h3>Гуманное обращение</h3>
+        <p>Мы категорически против усыпления. Каждое животное получает уход, лечение и время на поиск хозяина — без ограничений срока.</p>
+      </div>
+      <div class="mission-card reveal">
+        <div class="mission-icon" aria-hidden="true">🏠</div>
+        <h3>Ответственное устройство</h3>
+        <p>Мы тщательно проверяем потенциальных хозяев и сопровождаем каждое усыновление. Наша цель — навсегда, а не временно.</p>
+      </div>
+      <div class="mission-card reveal">
+        <div class="mission-icon" aria-hidden="true">🤝</div>
+        <h3>Прозрачность</h3>
+        <p>Публикуем отчёты о расходах, рассказываем о каждом животном и приглашаем всех желающих посетить приют лично.</p>
+      </div>
+      <div class="mission-card reveal">
+        <div class="mission-icon" aria-hidden="true">🌱</div>
+        <h3>Просвещение</h3>
+        <p>Проводим уроки в школах, мастер-классы и публичные лекции об ответственном отношении к животным.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TIMELINE ===== -->
+<section class="section timeline-section" aria-labelledby="history-heading">
+  <div class="section-inner" style="max-width:720px">
+    <span class="section-eyebrow">Хронология</span>
+    <h2 id="history-heading">Как мы развивались</h2>
+    <div class="divider-left" aria-hidden="true"></div>
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-year">2013</div>
+        <h3>Основание приюта</h3>
+        <p>Анна Смирнова и пять волонтёров открыли небольшой приют на 15 мест в арендованном помещении.</p>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-year">2015</div>
+        <h3>Первое собственное здание</h3>
+        <p>Благодаря сбору пожертвований мы переехали в собственное здание площадью 400 м².</p>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-year">2018</div>
+        <h3>Ветеринарный кабинет</h3>
+        <p>Открыли собственный веткабинет, что позволило оказывать помощь животным без вывоза в клинику.</p>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-year">2021</div>
+        <h3>500-е усыновление</h3>
+        <p>Торжественно отметили пятисотое успешное устройство питомца в любящую семью.</p>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-year">2026</div>
+        <h3>Расширение и новые программы</h3>
+        <p>Запущена программа временной опеки и детская образовательная инициатива «Лапа друга».</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GALLERY ===== -->
+<section class="section gallery-section" aria-labelledby="gallery-heading">
+  <div class="section-inner">
+    <span class="section-eyebrow">Галерея</span>
+    <h2 id="gallery-heading">Жизнь нашего приюта</h2>
+    <div class="divider-left" aria-hidden="true"></div>
+    <div class="gallery-grid" role="list">
+      <div class="gallery-item reveal" role="listitem">
+        <img src="https://avatars.mds.yandex.net/i?id=b2218e39f4649622b9cad06820452e7ba4984af4-5870104-images-thumbs&n=13" alt="Волонтёры на выгуле собак">
+      </div>
+      <div class="gallery-item reveal" role="listitem">
+        <img src="https://avatars.mds.yandex.net/i?id=76323276250e4c15dac30e56151e8ac1b37f4ca8-9065994-images-thumbs&n=13" alt="Счастливый пёс">
+      </div>
+      <div class="gallery-item reveal" role="listitem">
+        <img src="https://avatars.mds.yandex.net/i?id=214d95fbd20c75010d06ec74ee0ca6b6debc0722-5131410-images-thumbs&n=13" alt="Кошка в укрытии">
+      </div>
+      <div class="gallery-item reveal" role="listitem">
+        <img src="https://avatars.mds.yandex.net/i?id=25621136685e850e0a7801b917a6e5665064a154-4027246-images-thumbs&n=13" alt="Хаски на прогулке">
+      </div>
+      <div class="gallery-item reveal" role="listitem">
+        <img src="https://avatars.mds.yandex.net/i?id=033bfcc87229b72424edb1f799ee1c1da83e0d29-10701700-images-thumbs&n=13" alt="Ветеринарный осмотр">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VIDEO ===== -->
+<section class="video-section-about reveal" aria-labelledby="video-about-heading">
+  <div class="video-inner-about">
+    <span class="section-eyebrow">Видео о приюте</span>
+    <h2 id="video-about-heading">Посмотрите на нашу работу</h2>
+    <p>Небольшой видеорассказ о том, как живут наши питомцы и как работает команда.</p>
+    <div class="video-wrap">
+      <!-- Замените VIDEO_ID на реальный YouTube ID -->
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/zOi82X83U1o?si=LgiXYFqBcAVWHzUB" title="YouTube video player" 
+      frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; 
+      web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STAFF ===== -->
+<section class="section staff-section" aria-labelledby="staff-heading">
+  <div class="section-inner">
+    <span class="section-eyebrow">Люди</span>
+    <h2 id="staff-heading">Наша команда</h2>
+    <div class="divider-left" aria-hidden="true"></div>
+    <div class="staff-grid">
+      <div class="staff-card reveal">
+        <div class="staff-avatar"><img src="https://avatars.mds.yandex.net/i?id=a93eb04cd8ce693e601869ee70e5092604c9d9b6-5879173-images-thumbs&n=13" alt="Анна Смирнова"></div>
+        <div class="staff-name">Анна Смирнова</div>
+        <div class="staff-role">Директор</div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="staff-avatar"><img src="https://avatars.mds.yandex.net/i?id=9b82b413b5380ed97df9d08da023c55d89071fb0-5878385-images-thumbs&n=13" alt="Дмитрий Козлов"></div>
+        <div class="staff-name">Дмитрий Козлов</div>
+        <div class="staff-role">Ветеринар</div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="staff-avatar"><img src="https://avatars.mds.yandex.net/i?id=1028e936a0854ea84a4f812e133c3de71dbf1a41-4080712-images-thumbs&n=13" alt="Мария Петрова"></div>
+        <div class="staff-name">Мария Петрова</div>
+        <div class="staff-role">Куратор кошек</div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="staff-avatar"><img src="https://avatars.mds.yandex.net/i?id=cfae3d0f0a72c5e6abed1cf85aceb3c0d1ad4d59-5210621-images-thumbs&n=13" alt="Игорь Фёдоров"></div>
+        <div class="staff-name">Игорь Фёдоров</div>
+        <div class="staff-role">Куратор собак</div>
+      </div>
+      <div class="staff-card reveal">
+        <div class="staff-avatar"><img src="https://avatars.mds.yandex.net/i?id=62d6542f8d70c7db5fc8f8b17b4fe4478324e9cf-5289055-images-thumbs&n=13" alt="Ольга Васильева"></div>
+        <div class="staff-name">Ольга Васильева</div>
+        <div class="staff-role">Волонтёрский координатор</div>
+        <p class="staff-bio">Организует работу 35 постоянных волонтёров приюта.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACTS ===== -->
+<section class="section contact-page-section" id="contacts" aria-labelledby="contacts-heading">
+  <div class="section-inner">
+    <span class="section-eyebrow">Контакты</span>
+    <h2 id="contacts-heading">Как нас найти</h2>
+    <div class="divider-left" aria-hidden="true"></div>
+    <div class="contact-page-layout">
+
+      <div class="reveal">
+        <div class="contact-block">
+          <h3>Наши контакты</h3>
+          <div class="contact-row">
+            <span class="cicon" aria-hidden="true">📍</span>
+            <div class="cinfo">
+              <strong>Адрес</strong>
+              <span>г. Москва, ул. Лесная, д. 24, стр. 3<br><small style="font-weight:400;font-size:.82rem;color:var(--muted)">м. Белорусская, 10 минут пешком</small></span>
+            </div>
+          </div>
+          <div class="contact-row">
+            <span class="cicon" aria-hidden="true">📞</span>
+            <div class="cinfo">
+              <strong>Телефон</strong>
+              <a href="tel:+74951234567">+7 (495) 123-45-67</a>
+            </div>
+          </div>
+          <div class="contact-row">
+            <span class="cicon" aria-hidden="true">✉️</span>
+            <div class="cinfo">
+              <strong>Электронная почта</strong>
+              <a href="mailto:info@teplyelapy.ru">info@teplyelapy.ru</a>
+            </div>
+          </div>
+          <div class="contact-row">
+            <span class="cicon" aria-hidden="true">🕐</span>
+            <div class="cinfo">
+              <strong>Часы работы</strong>
+              <span>Ежедневно, 10:00 — 19:00<br>Без выходных и праздников</span>
+            </div>
+          </div>
+          <div class="contact-row">
+            <span class="cicon" aria-hidden="true">🌐</span>
+            <div class="cinfo">
+              <strong>Сайт</strong>
+              <a href="index.html">teplyelapy.ru</a>
+            </div>
+          </div>
+          <div class="map-placeholder" role="img" aria-label="Карта расположения приюта">
+            <div>
+              <strong>г. Москва, ул. Лесная, д. 24</strong>
+              <p>Нажми на конпку</p>
+              <p style="margin-top:10px"><a href="https://yandex.ru/maps/?text=Москва+ул+Лесная+24" target="_blank" rel="noopener noreferrer" style="color:var(--terra);font-weight:700">Открыть карту →</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal">
+        <div class="socials-block" style="margin-bottom:20px">
+          <h3>Мы в социальных сетях</h3>
+          <p>Следите за нами, чтобы не пропустить новости о наших питомцах.</p>
+          <div class="footer-socials">
+            <a href="https://vk.com/domik_melkashei" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="ВКонтакте">
+              <span aria-hidden="true">ВК</span> ВКонтакте
+            </a>
+            <a href="https://ok.ru/group57734508904499" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="Одноклассники">
+              <span aria-hidden="true">ОК</span> Одноклассники
+            </a>
+            <a href="https://t.me/aperolspitzspb" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="Telegram">
+              <span aria-hidden="true">TG</span> Telegram
+            </a>
+            <a href="https://yarus.ru/shelter" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="ЯRUS"> 
+              <span aria-hidden="true">ЯR</span> ЯRUS
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-block">
+          <h3>Реквизиты для пожертвований</h3>
+          <div class="contact-row">
+            <span class="cicon" aria-hidden="true">🏦</span>
+            <div class="cinfo">
+              <strong>Наименование</strong>
+              <span>АНО «Приют Тёплые лапы»</span>
+            </div>
+          </div>
+          <div class="contact-row">
+            <span class="cicon" aria-hidden="true">📋</span>
+            <div class="cinfo">
+              <strong>ИНН / КПП</strong>
+              <span>7700000001 / 770001001</span>
+            </div>
+          </div>
+          <div class="contact-row">
+            <span class="cicon" aria-hidden="true">💳</span>
+            <div class="cinfo">
+              <strong>Расчётный счёт</strong>
+              <span>2200701012388515</span>
+            </div>
+          </div>
+          <div class="contact-row">
+            <span class="cicon" aria-hidden="true">🏢</span>
+            <div class="cinfo">
+              <strong>Банк</strong>
+              <span>ПАО Сбербанк, г. Москва<br>БИК 044525225</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo" aria-label="Тёплые лапы — на главную">
+        <span class="logo-paw" aria-hidden="true">🐾</span>
+        Тёплые лапы
+      </a>
+      <p>Приют для бездомных животных с 2013 года. Помогаем найти каждому питомцу любящую семью.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Страницы</h4>
+      <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="about.html">О нас</a></li>
+        <li><a href="index.html#animals">Животные</a></li>
+        <li><a href="index.html#news">Новости</a></li>
+        <li><a href="#contacts">Контакты</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Помочь</h4>
+      <ul>
+        <li><a href="index.html#contact">Усыновить питомца</a></li>
+        <li><a href="index.html#contact">Стать волонтёром</a></li>
+        <li><a href="#contacts">Пожертвование</a></li>
+        <li><a href="index.html#contact">Временная опека</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Социальные сети</h4>
+      <div class="footer-socials">
+        <a href="https://vk.com/domik_melkashei" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="ВКонтакте">
+          <span aria-hidden="true">ВК</span> ВКонтакте
+        </a>
+        <a href="https://ok.ru/group57734508904499" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="Одноклассники">
+          <span aria-hidden="true">ОК</span> Одноклассники
+        </a>
+        <a href="https://t.me/aperolspitzspb" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="Telegram">
+          <span aria-hidden="true">TG</span> Telegram
+        </a>
+        <a href="https://yarus.ru/shelter" target="_blank" rel="noopener noreferrer" class="footer-social" aria-label="ЯRUS"> 
+          <span aria-hidden="true">ЯR</span> ЯRUS
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Приют «Тёплые лапы». Все права защищены.</span>
+    <span>Тема: <strong>WarmPaws v1.0</strong> | <a href="#">Политика конфиденциальности</a></span>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu(btn) {
+    const menu = document.getElementById('mobileMenu');
+    const open = menu.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  }
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+</script>
+
+</body>
+</html>
